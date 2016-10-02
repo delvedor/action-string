@@ -1,29 +1,30 @@
 {
-  "name": "action-string",
-  "version": "0.1.0",
-  "description": "Strigify and parse an action-string",
-  "main": "action-string.js",
+  "name": "callback-string",
+  "version": "0.2.0",
+  "description": "Strigify and parse an callback-string",
+  "main": "Parse.js",
   "scripts": {
     "lint": "standard",
     "test": "npm run lint && tap test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/delvedor/action-string.git"
+    "url": "git+https://github.com/delvedor/callback-string.git"
   },
   "keywords": [
     "action",
     "parse",
     "stringify",
     "parameters",
-    "pattern"
+    "pattern",
+    "callback"
   ],
   "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/delvedor/action-string/issues"
+    "url": "https://github.com/delvedor/callback-string/issues"
   },
-  "homepage": "https://github.com/delvedor/action-string#readme",
+  "homepage": "https://github.com/delvedor/callback-string#readme",
   "engines": ">=4.0.0",
   "devDependencies": {
     "benchmark": "^2.1.1",
