@@ -8,7 +8,7 @@ const stringify = require('./Stringify')
 test('.stringify', t => {
   t.plan(2)
   const obj = {
-    action: 'getData',
+    callback: 'getData',
     parameters: {
       from: '10/02/2002',
       to: '11/03/2008'
@@ -22,13 +22,13 @@ test('.parse', t => {
   t.plan(2)
   const str = 'getData#from="10/02/2002"#to="11/03/2008"'
   t.is(typeof parse(str), 'object')
-  t.deepEqual(parse(str), { action: 'getData', parameters: { from: '10/02/2002', to: '11/03/2008' } })
+  t.deepEqual(parse(str), { callback: 'getData', parameters: { from: '10/02/2002', to: '11/03/2008' } })
 })
 
 test('.stringify and .parse', t => {
   t.plan(2)
   const obj = {
-    action: 'getData',
+    callback: 'getData',
     parameters: {
       from: '10/02/2002',
       to: '11/03/2008'
