@@ -1,19 +1,19 @@
 'use strict'
 
-function Parse (actionString, escape) {
+function Parse (callbackString, escape) {
   if (!(this instanceof Parse)) {
-    return new Parse(actionString, escape)
+    return new Parse(callbackString, escape)
   }
   escape = escape || '#'
-  if (typeof actionString !== 'string' || typeof escape !== 'string') {
-    throw new TypeError('action and escape should be strings')
+  if (typeof callbackString !== 'string' || typeof escape !== 'string') {
+    throw new TypeError('callbackString and escape should be strings')
   }
-  actionString = actionString.split(escape)
-  this.action = actionString[0]
+  callbackString = callbackString.split(escape)
+  this.callback = callbackString[0]
   this.parameters = {}
-  for (let i = 1; i < actionString.length; i++) {
-    actionString[i] = actionString[i].split('=')
-    this.parameters[actionString[i][0]] = JSON.parse(actionString[i][1])
+  for (let i = 1; i < callbackString.length; i++) {
+    callbackString[i] = callbackString[i].split('=')
+    this.parameters[callbackString[i][0]] = JSON.parse(callbackString[i][1])
   }
 }
 

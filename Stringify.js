@@ -1,17 +1,17 @@
 'use strict'
 
-function Stringify (actionObject, escape) {
+function Stringify (callbackObject, escape) {
   if (!(this instanceof Stringify)) {
-    return new Stringify(actionObject, escape)
+    return new Stringify(callbackObject, escape)
   }
   escape = escape || '#'
-  if (typeof actionObject !== 'object' || typeof escape !== 'string') {
-    throw new TypeError('Action should be an object and  escape a string')
+  if (typeof callbackObject !== 'object' || typeof escape !== 'string') {
+    throw new TypeError('callbackObject should be an object and  escape a string')
   }
-  this.result = `${actionObject.action}${escape}`
-  const keys = Object.keys(actionObject.parameters)
+  this.result = `${callbackObject.callback}${escape}`
+  const keys = Object.keys(callbackObject.parameters)
   for (let i = 0, len = keys.length; i < len; i++) {
-    this.result += `${keys[i]}=${JSON.stringify(actionObject.parameters[keys[i]])}`
+    this.result += `${keys[i]}=${JSON.stringify(callbackObject.parameters[keys[i]])}`
     if (i !== len - 1) this.result += escape
   }
 }
